@@ -15,10 +15,27 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <Text> My name is {name} and I am {age} years old </Text>
-      <Text>What is your name?</Text>     
-       <TextInput/>
+      <Text>What is your name?</Text>        
+       <Text> My name is {name} </Text>
+  
+       <TextInput
+       multiline
+        style={styles.input}
+        placeholder='e.g My name is Jane Doe'
+                onChangeText={(value)=> setName(value)}
+        />
+      <Text>What is your age?</Text>    
+      <Text>I am {age} years old </Text>
+   
+       <TextInput
+       keyboardType='numeric'
+       multiline
+        style={styles.input}
+        placeholder='e.g 100'
+                onChangeText={(value)=> setAge(value)}
+        />
 
+        
     </View>
   );
 }
@@ -30,5 +47,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#777',
+    padding: 8,
+    margin: 10,
+    width: 200,
   },
 });
